@@ -28,7 +28,7 @@
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Masuk</button>
     </form>
-    <p style="text-align:center;">Belum punya akun? <a href="/">Daftar</a></p>
+    <p style="text-align:center;">Belum punya akun? <a href="/register">Daftar</a></p>
 </div>
 </body>
 </html>

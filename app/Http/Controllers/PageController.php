@@ -6,6 +6,25 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function landing() {
+    $fitur = [
+        ['ikon' => '🔐', 'judul' => 'Register & login',    'isi' => 'Buat akun, masuk, dan keluar kapan saja. Password disimpan dalam bentuk hash, bukan teks polos.'],
+        ['ikon' => '📊', 'judul' => 'Dashboard progres',   'isi' => 'Pantau tugas yang selesai, jam ngoding, dan aktivitas terbaru dalam satu halaman.'],
+        ['ikon' => '📝', 'judul' => 'Pengelolaan catatan', 'isi' => 'Simpan pelajaran, kesalahan, dan prestasi dalam kartu bergaya masonry yang rapi.'],
+        ['ikon' => '🙋', 'judul' => 'Profil pribadi',      'isi' => 'Identitas, keahlian, dan pencapaian terkumpul di satu tempat.'],
+    ];
+
+    $langkah = [
+        ['judul' => 'Daftar',        'isi' => 'Isi username, email, dan password. Cuma butuh satu menit.'],
+        ['judul' => 'Masuk',         'isi' => 'Login dengan akun yang baru dibuat, lalu kamu langsung diarahkan ke dashboard.'],
+        ['judul' => 'Mulai mencatat', 'isi' => 'Lihat progres, baca catatan, dan kenali dirimu lewat halaman profil.'],
+    ];
+
+    $teknologi = ['Laravel', 'Blade', 'Tailwind CSS', 'Vite'];
+
+    return view('landingpage', compact('fitur', 'langkah', 'teknologi'));
+}
+
     private function username(Request $request): string
     {
         return $request->query('username', session('user.username'));
@@ -150,8 +169,7 @@ class PageController extends Controller
         ]);
     }
 
-    private function dataCatatan(): array 
-    {
+    private function dataCatatan(): array {
         return [
             [
                 'gambar'   => 'images/gambar_1.png',

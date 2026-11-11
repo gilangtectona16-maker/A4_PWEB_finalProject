@@ -4,7 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [AuthController::class, 'showRegister'])->name('showRegister');
+Route::get('/', [PageController::class, 'landing'])->name('landing');
+
+Route::get('/register', [AuthController::class, 'showRegister'])->name('showRegister');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('/login', [AuthController::class, 'showLogin'])->name('showLogin');

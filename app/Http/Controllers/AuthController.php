@@ -51,6 +51,6 @@ class AuthController extends Controller
 
     public function logout(Request $request) {
         $request->session()->forget('logged_in');
-        return redirect('/login')->with('success', 'Berhasil logout!');
+        return redirect('/')->with('success', 'Berhasil logout!');
     }
 }
